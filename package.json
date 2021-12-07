@@ -1,0 +1,23 @@
+{
+  "name": "javascript-treeview",
+  "version": "1.0.0",
+  "description": "Javascript Treeview - An Open Source, Extensible Viewer for Microarray Data in the PCL or CDT format.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alokito/javascript-treeview.git"
+  },
+  "author": "Alok Saldanha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alokito/javascript-treeview/issues"
+  },
+  "homepage": "https://github.com/alokito/javascript-treeview#readme",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
