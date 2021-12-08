@@ -105,3 +105,6 @@ dist
 
 # electron-forge
 out
+
+# typescript
+dist
