@@ -4,3 +4,4 @@ Javascript Treeview - An Open Source, Extensible Viewer for Microarray Data in t
 # Development Links
 
 * Electron: [main](https://www.electronjs.org/) | [docs](https://github.com/electron/electron/tree/v16.0.4/docs#readme) | [issues](https://github.com/electron/electron/issues)
+* [Multiprocess Architecture](https://cameronnokes.com/blog/deep-dive-into-electron's-main-and-renderer-processes/)
