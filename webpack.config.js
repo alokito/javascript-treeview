@@ -5,12 +5,16 @@ module.exports = [
     mode: 'development',
     entry: './src/main.ts',
     target: 'electron-main',
+    devtool: 'source-map',
     module: {
       rules: [{
         test: /\.ts$/,
         include: /src/,
         use: [{ loader: 'ts-loader' }]
       }]
+    },
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
       path: __dirname + '/dist',
@@ -37,7 +41,7 @@ module.exports = [
     mode: 'development',
     entry: './src/renderer.ts',
     target: 'electron-main',
-    devtool: false,
+    devtool: 'source-map',
     module: {
       rules: [{
         test: /\.ts$/,
