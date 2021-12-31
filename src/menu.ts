@@ -1,5 +1,5 @@
-import { app, Menu, MenuItemConstructorOptions, MenuItem } from 'electron';
-
+import { app, Menu, MenuItemConstructorOptions, dialog, BrowserWindow } from 'electron';
+import { logger } from './log'
 const isMac = process.platform === 'darwin'
 
 const appMenu: MenuItemConstructorOptions= {
@@ -23,8 +23,25 @@ const fileMenu: MenuItemConstructorOptions= {
         {
             label: 'Open',
             click: async () => {
-                const { shell } = require('electron')
-                await shell.openExternal('https://electronjs.org')
+                dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), {
+                    properties: ['openFile'],
+                    filters: [
+                        {
+                            extensions: ["cdt"],
+                            name: "Clustered Data Files"
+                        },{
+                            extensions: ["*"],
+                            name: "All Files"
+                        }
+
+                    ]
+                }).then(files => {
+                    if (files !== undefined && !files.canceled && files.filePaths.length > 0) {
+                        const selectedCdt = files.filePaths[0];
+                        logger.info(`opening file ${selectedCdt}`)
+                    }
+                });
+                
             }
         },
         isMac ? { role: 'close' } : { role: 'quit' }
